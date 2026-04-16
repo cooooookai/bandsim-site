@@ -1,0 +1,329 @@
+:root {
+  --bg: #080b12;
+  --surface: #0f1420;
+  --surface-soft: #131c2a;
+  --text: #e7ecf5;
+  --muted: #a8b1c2;
+  --accent: #d8b472;
+  --line: rgba(235, 241, 255, 0.12);
+  --hero-overlay-top: rgba(3, 6, 12, 0.32);
+  --hero-overlay-bottom: rgba(3, 6, 12, 0.78);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.narrow {
+  width: min(760px, calc(100% - 3rem));
+}
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  background-image: url("./assets/hero-livehouse.png");
+  background-size: cover;
+  background-position: center 42%;
+  isolation: isolate;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, var(--hero-overlay-top) 0%, rgba(5, 8, 14, 0.55) 55%, var(--hero-overlay-bottom) 100%),
+    linear-gradient(90deg, rgba(4, 8, 16, 0.64) 0%, rgba(4, 8, 16, 0.2) 45%, rgba(4, 8, 16, 0.68) 100%);
+  z-index: -1;
+}
+
+.top-nav {
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.nav-status {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero-content {
+  padding: clamp(2.5rem, 9vh, 6rem) 0 4.2rem;
+  max-width: 700px;
+}
+
+.kicker {
+  margin: 0 0 0.9rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 6.5vw, 5.4rem);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+}
+
+.subtitle {
+  margin: 0.6rem 0 1.5rem;
+  font-size: clamp(1.05rem, 2.4vw, 1.45rem);
+  color: #d2dae9;
+}
+
+.lead,
+.lead-cn {
+  margin: 0;
+  font-size: clamp(1.02rem, 2.2vw, 1.25rem);
+  max-width: 660px;
+}
+
+.lead-cn {
+  margin-top: 0.6rem;
+  color: #c8d1e2;
+}
+
+.status {
+  display: inline-block;
+  margin: 1.5rem 0 2rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(216, 180, 114, 0.48);
+  border-radius: 999px;
+  color: #f0debb;
+  background: rgba(17, 22, 33, 0.48);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero-links a {
+  border: 1px solid var(--line);
+  background: rgba(9, 14, 24, 0.62);
+  color: #e4eaf5;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-size: 0.93rem;
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.hero-links a:hover {
+  transform: translateY(-1px);
+  border-color: rgba(216, 180, 114, 0.64);
+  background: rgba(18, 25, 39, 0.9);
+}
+
+.section {
+  padding: clamp(3.4rem, 9vw, 6.4rem) 0;
+}
+
+.section h2 {
+  margin: 0 0 1.2rem;
+  font-size: clamp(1.45rem, 3.2vw, 2rem);
+  letter-spacing: 0.015em;
+}
+
+.section p {
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.pillars {
+  background: linear-gradient(180deg, rgba(12, 18, 30, 0.36) 0%, rgba(10, 14, 22, 0.92) 100%);
+  border-top: 1px solid rgba(217, 228, 255, 0.06);
+  border-bottom: 1px solid rgba(217, 228, 255, 0.06);
+}
+
+.pillar-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pillar-grid article {
+  padding: 1.25rem;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(21, 29, 42, 0.72) 0%, rgba(12, 18, 27, 0.86) 100%);
+  border: 1px solid rgba(223, 234, 255, 0.08);
+}
+
+.pillar-grid h3 {
+  margin: 0;
+  font-size: 1.12rem;
+}
+
+.pillar-grid p {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.links-note {
+  margin-top: 0.2rem;
+}
+
+.link-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.link-grid a {
+  padding: 1rem 1.05rem;
+  border-radius: 12px;
+  border: 1px solid rgba(223, 234, 255, 0.1);
+  background: linear-gradient(180deg, rgba(16, 22, 33, 0.72) 0%, rgba(10, 14, 22, 0.96) 100%);
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.link-grid a span {
+  display: block;
+  font-weight: 600;
+  color: #e5ebf6;
+}
+
+.link-grid a small {
+  display: block;
+  margin-top: 0.4rem;
+  color: #9ba6ba;
+}
+
+.link-grid a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(216, 180, 114, 0.6);
+}
+
+.contact-panel {
+  margin-top: 1rem;
+  padding: 0.95rem 1.05rem;
+  border-radius: 12px;
+  border: 1px solid rgba(223, 234, 255, 0.1);
+  background: linear-gradient(180deg, rgba(16, 22, 33, 0.5) 0%, rgba(10, 14, 22, 0.86) 100%);
+}
+
+.contact-panel p {
+  margin: 0;
+  color: #ccd5e6;
+}
+
+.contact-panel a {
+  color: #f0debb;
+  border-bottom: 1px solid rgba(216, 180, 114, 0.4);
+}
+
+.contact-panel a:hover {
+  border-bottom-color: rgba(216, 180, 114, 0.7);
+}
+
+.footer {
+  border-top: 1px solid rgba(223, 234, 255, 0.08);
+  padding: 1.3rem 0 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer p {
+  margin: 0;
+  color: #99a3b8;
+  font-size: 0.9rem;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 980px) {
+  .pillar-grid,
+  .link-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .container,
+  .narrow {
+    width: min(100%, calc(100% - 2rem));
+  }
+
+  .hero {
+    min-height: 96svh;
+    background-position: 59% 42%;
+  }
+
+  .hero-content {
+    padding-top: clamp(2rem, 10vh, 4.3rem);
+    padding-bottom: 2.4rem;
+  }
+
+  .status {
+    margin-top: 1.2rem;
+  }
+
+  .hero-links {
+    gap: 0.55rem;
+  }
+
+  .hero-links a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .top-nav {
+    padding-top: 1.1rem;
+  }
+}
